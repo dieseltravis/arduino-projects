@@ -42,6 +42,7 @@ void loop() {
   // test source tank first
   digitalWrite(sourceTriggerPin, HIGH);
   sourceSensorState = digitalRead(sourceSensorPin);
+  
   Serial.print("sourceSensorState: ");
   Serial.println(sourceSensorState);
   
@@ -50,6 +51,7 @@ void loop() {
     digitalWrite(relayPin, HIGH);
     digitalWrite(sourceTriggerPin, LOW);
     digitalWrite(ledPin, HIGH);
+    
     Serial.println("Sleeping for ~16 seconds...");
     sleep_for(sourceDelay);
   }
@@ -57,11 +59,12 @@ void loop() {
     // source has water, test destination
     digitalWrite(destTriggerPin, HIGH);
     destSensorState = digitalRead(destSensorPin);
+    
     Serial.print("destSensorState: ");
     Serial.println(destSensorState);
     
     if (destSensorState == LOW){
-      // turn on pump
+      // turn on pump relay
       digitalWrite(relayPin, LOW);
     }
     else if (destSensorState == HIGH){
@@ -69,6 +72,7 @@ void loop() {
       digitalWrite(relayPin, HIGH);
       digitalWrite(sourceTriggerPin, LOW);
       digitalWrite(destTriggerPin, LOW);
+      
       Serial.println("Sleeping for ~12 hours...");
       sleep_for(triggerDelay);
     }
@@ -76,6 +80,8 @@ void loop() {
 }
 
 void sleep_for(int eightSecondBlocks) {
+  // wait for any serial messages to print before sleeping
+  delay(1000);
   for (int i = 0; i < eightSecondBlocks; i++){
     LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
   }
