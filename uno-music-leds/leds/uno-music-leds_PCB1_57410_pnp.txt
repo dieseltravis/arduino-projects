@@ -1,0 +1,24 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=uno-music-leds_PCB1_57410
+*Date=22:46:40
+*CreatedBy=Fritzing 0.9.2b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;10k;THT;74.8007;-8.9077;90;Bottom;R3
+2;;;17.8494;-20.7901;0;Bottom;Via2
+3;10k;THT;44.3207;-8.9077;90;Bottom;R2
+4;;D2Pak [SMD];10.6507;-21.5678;0;Top;Q1
+5;;;43.4526;-21.3997;0;Bottom;Via1
+6;10k;THT;17.0157;-8.2727;90;Bottom;R1
+7;;D2Pak [SMD];34.1457;-22.2028;0;Top;Q2
+8;;D2Pak [SMD];61.4507;-22.2028;0;Top;Q3
+9;;5 mm [THT];42.1647;-38.7528;0;Bottom;rgb led strip

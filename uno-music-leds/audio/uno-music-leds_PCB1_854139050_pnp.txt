@@ -1,0 +1,21 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=uno-music-leds_PCB1_854139050
+*Date=22:47:03
+*CreatedBy=Fritzing 0.9.2b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;100nF;100 mil [THT, multilayer];18.9817;-23.9145;-90;Bottom;C2
+2;100nF;100 mil [THT, multilayer];15.1717;-2.32454;0;Bottom;C4
+3;33pF;100 mil [THT, multilayer];13.9017;-25.8195;90;Bottom;C1
+4;10nF;100 mil [THT, multilayer];22.7917;-24.5495;0;Bottom;C3
+5;220k;THT;8.8217;-21.3745;0;Bottom;R4
+6;;DIP (Dual Inline) [THT];17.7117;-13.1195;-90;Bottom;MSGEQ7

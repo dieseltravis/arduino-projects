@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Fritzing (http://www.fritzing.org/) -->
+<netlist date="Fri May 6 22:55:58 2016" sketch="uno-music-leds.fzz">
+ <net>
+  <connector id="connector0" name="Pin 0">
+   <part id="67300" label="R2" title="10kΩ Resistor"/>
+  </connector>
+  <connector id="connector1" name="drain">
+   <part id="65780" label="Q2" title="Basic FET N-Channel"/>
+  </connector>
+  <connector id="connector1" name="common anode">
+   <part id="63750" label="rgb led strip" title="RGB LED - (4 legs)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="Pin 0">
+   <part id="96120" label="R1" title="10kΩ Resistor"/>
+  </connector>
+  <connector id="connector1" name="drain">
+   <part id="65710" label="Q1" title="Basic FET N-Channel"/>
+  </connector>
+  <connector id="connector0" name="red cathode">
+   <part id="63750" label="rgb led strip" title="RGB LED - (4 legs)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector88" name="GND">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector57" name="GND">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector89" name="GND">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector1" name="1">
+   <part id="73340" label="C2" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector1" name="1">
+   <part id="73160" label="C4" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector1" name="pin2">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+  <connector id="connector0" name="0">
+   <part id="73270" label="C1" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part id="67690" label="R3" title="10kΩ Resistor"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part id="96120" label="R1" title="10kΩ Resistor"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part id="67300" label="R2" title="10kΩ Resistor"/>
+  </connector>
+  <connector id="connector0" name="Sleeve">
+   <part id="76410" label="TRS1" title="Audio Jack (TRS) 3.5mm"/>
+  </connector>
+  <connector id="connector2" name="source">
+   <part id="65850" label="Q3" title="Basic FET N-Channel"/>
+  </connector>
+  <connector id="connector2" name="source">
+   <part id="65710" label="Q1" title="Basic FET N-Channel"/>
+  </connector>
+  <connector id="connector2" name="source">
+   <part id="65780" label="Q2" title="Basic FET N-Channel"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector87" name="5V">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector0" name="Pin 0">
+   <part id="854114420" label="R4" title="220kΩ Resistor"/>
+  </connector>
+  <connector id="connector0" name="0">
+   <part id="73160" label="C4" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector0" name="pin1">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="blue cathode">
+   <part id="63750" label="rgb led strip" title="RGB LED - (4 legs)"/>
+  </connector>
+  <connector id="connector90" name="VIN">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector63" name="D2">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector3" name="pin4">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="A0">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector2" name="pin3">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector1" name="Ring">
+   <part id="76410" label="TRS1" title="Audio Jack (TRS) 3.5mm"/>
+  </connector>
+  <connector id="connector2" name="Ring">
+   <part id="76410" label="TRS1" title="Audio Jack (TRS) 3.5mm"/>
+  </connector>
+  <connector id="connector1" name="1">
+   <part id="74000" label="C3" title="Ceramic Capacitor"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector65" name="D4">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector6" name="pin7">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector52" name="D9 PWM">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector0" name="Gate">
+   <part id="65850" label="Q3" title="Basic FET N-Channel"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector53" name="D10 PWM/SS">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector0" name="Gate">
+   <part id="65780" label="Q2" title="Basic FET N-Channel"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="Gate">
+   <part id="65710" label="Q1" title="Basic FET N-Channel"/>
+  </connector>
+  <connector id="connector54" name="D11 PWM/MOSI">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="Pin 0">
+   <part id="67690" label="R3" title="10kΩ Resistor"/>
+  </connector>
+  <connector id="connector1" name="drain">
+   <part id="65850" label="Q3" title="Basic FET N-Channel"/>
+  </connector>
+  <connector id="connector2" name="green cathode">
+   <part id="63750" label="rgb led strip" title="RGB LED - (4 legs)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="0">
+   <part id="73340" label="C2" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector5" name="pin6">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="0">
+   <part id="74000" label="C3" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector4" name="pin5">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector1" name="1">
+   <part id="73270" label="C1" title="Ceramic Capacitor"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part id="854114420" label="R4" title="220kΩ Resistor"/>
+  </connector>
+  <connector id="connector7" name="pin8">
+   <part id="854102160" label="MSGEQ7" title="MSGEQ7"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="Tip">
+   <part id="76410" label="TRS1" title="Audio Jack (TRS) 3.5mm"/>
+  </connector>
+  <connector id="connector4" name="Tip">
+   <part id="76410" label="TRS1" title="Audio Jack (TRS) 3.5mm"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector5" name="A5/SCL">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector60" name="A5/SCL">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector68" name="D7">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector4" name="A4/SDA">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+  <connector id="connector59" name="A4/SDA">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector67" name="D6 PWM">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="A3">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector66" name="D5 PWM">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector2" name="A2">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector1" name="A1">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector64" name="D3 PWM">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector62" name="D1/TX">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector61" name="D0/RX">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector86" name="3V3">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector85" name="RESET">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector84" name="ioref">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector58" name="AREF">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector56" name="D13/SCK">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector55" name="D12/MISO">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector51" name="D8">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector91" name="N/C">
+   <part id="65370" label="Arduino" title="Arduino Uno (Rev3)"/>
+  </connector>
+ </net>
+</netlist>
