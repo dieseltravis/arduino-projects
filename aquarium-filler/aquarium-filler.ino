@@ -42,6 +42,7 @@ void loop() {
   // test source tank first
   digitalWrite(sourceTriggerPin, HIGH);
   sourceSensorState = digitalRead(sourceSensorPin);
+  digitalWrite(sourceTriggerPin, LOW);
   
   Serial.print("sourceSensorState: ");
   Serial.println(sourceSensorState);
@@ -49,7 +50,6 @@ void loop() {
   if (sourceSensorState == LOW){
     // Source tank is empty
     digitalWrite(relayPin, HIGH);
-    digitalWrite(sourceTriggerPin, LOW);
     digitalWrite(ledPin, HIGH);
     
     Serial.println("Sleeping for ~16 seconds...");
@@ -59,6 +59,7 @@ void loop() {
     // source has water, test destination
     digitalWrite(destTriggerPin, HIGH);
     destSensorState = digitalRead(destSensorPin);
+    digitalWrite(destTriggerPin, LOW);
     
     Serial.print("destSensorState: ");
     Serial.println(destSensorState);
@@ -70,8 +71,6 @@ void loop() {
     else if (destSensorState == HIGH){
       // Destination tank is full
       digitalWrite(relayPin, HIGH);
-      digitalWrite(sourceTriggerPin, LOW);
-      digitalWrite(destTriggerPin, LOW);
       
       Serial.println("Sleeping for ~12 hours...");
       sleep_for(triggerDelay);
