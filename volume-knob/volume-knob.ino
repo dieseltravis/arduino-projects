@@ -1,3 +1,4 @@
+// https://github.com/adafruit/Adafruit-Trinket-USB/tree/master/TrinketHidCombo
 #include "TrinketHidCombo.h"
 
 // original code source: 
@@ -9,11 +10,16 @@ const int PIN_ENCODER_A = 2;
 const int PIN_ENCODER_B = 0;
 const int PIN_ENCODER_SWITCH = 1;
 
+const int ENCODER_NOT_MOVED = 0;
+const int ENCODER_MOVED_DOWN = -1;
+const int ENCODER_MOVED_UP = 1;
+
 const int DEBOUNCE_DELAY_MS = 350;
 
 static byte enc_prev_pos = 0;
 static byte enc_flags = 0;
-static char sw_was_pressed = 0;
+//static char sw_was_pressed = 0;
+static boolean mutePressed = false;
 
 void setup() {
     // set pins as input with internal pull-up resistors enabled
@@ -42,7 +48,7 @@ void setup() {
 
 void loop() {
     // 1 or -1 if moved, sign is direction
-    int enc_action = 0;
+    int enc_action = ENCODER_NOT_MOVED;
 
     // note: for better performance, the code will now use
     // direct port access techniques
@@ -82,13 +88,13 @@ void loop() {
             // or maybe one edge is missing, if missing then require the middle state
             // this will reject bounces and false movements
             if (bit_is_set(enc_flags, 0) && (bit_is_set(enc_flags, 2) || bit_is_set(enc_flags, 4))) {
-                enc_action = 1;
+                enc_action = ENCODER_MOVED_UP;
             } else if (bit_is_set(enc_flags, 2) && (bit_is_set(enc_flags, 0) || bit_is_set(enc_flags, 4))) {
-                enc_action = 1;
+                enc_action = ENCODER_MOVED_UP;
             } else if (bit_is_set(enc_flags, 1) && (bit_is_set(enc_flags, 3) || bit_is_set(enc_flags, 4))) {
-                enc_action = -1;
+                enc_action = ENCODER_MOVED_DOWN;
             } else if (bit_is_set(enc_flags, 3) && (bit_is_set(enc_flags, 1) || bit_is_set(enc_flags, 4))) {
-                enc_action = -1;
+                enc_action = ENCODER_MOVED_DOWN;
             }
 
             // reset for next time
@@ -98,27 +104,27 @@ void loop() {
 
     enc_prev_pos = enc_cur_pos;
 
-    if (enc_action > 0) {
+    if (enc_action == ENCODER_MOVED_UP) {
         TrinketHidCombo.pressMultimediaKey(MMKEY_VOL_UP);
-    } else if (enc_action < 0) {
+    } else if (enc_action == ENCODER_MOVED_DOWN) {
         TrinketHidCombo.pressMultimediaKey(MMKEY_VOL_DOWN);
     }
 
     // remember that the switch is active-high
     if (bit_is_set(TRINKET_PINx, PIN_ENCODER_SWITCH)) {
         // only on initial press, so the keystroke is not repeated while the button is held down
-        if (sw_was_pressed == 0) {
+        if (!mutePressed) {
             TrinketHidCombo.pressMultimediaKey(MMKEY_MUTE);
             // debounce delay
             delay(DEBOUNCE_DELAY_MS);
         }
-        sw_was_pressed = 1;
+        mutePressed = true;
     } else {
-        if (sw_was_pressed != 0) {
+        if (mutePressed) {
             // debounce delay
             delay(DEBOUNCE_DELAY_MS);
         }
-        sw_was_pressed = 0;
+        mutePressed = false;
     }
 
     // check if USB needs anything done
