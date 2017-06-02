@@ -14,7 +14,7 @@ const int ENCODER_NOT_MOVED = 0;
 const int ENCODER_MOVED_DOWN = -1;
 const int ENCODER_MOVED_UP = 1;
 
-const int DEBOUNCE_DELAY_MS = 350;
+const int DEBOUNCE_DELAY_MS = 100;
 
 static byte enc_prev_pos = 0;
 static byte enc_flags = 0;
