@@ -33,7 +33,7 @@ void setup() {
     // since it shares the pin with Trinket's built-in LED
     // the LED acts as a pull-down resistor
     digitalWrite(PIN_ENCODER_SWITCH, LOW);
-
+    
     // start the USB device engine and enumerate
     TrinketHidCombo.begin();
 
