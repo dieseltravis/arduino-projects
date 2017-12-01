@@ -18,8 +18,7 @@ int spectrumValue[7];
 // when there is no input, so use this value to
 // filter out a lot of the chaff.
 
-// Try 100, mine's still noisy
-int filterValue = 100;
+int filterValue = 80;
  
 // LED pins connected to the PWM pins on the Arduino
  
