@@ -17,17 +17,21 @@ int spectrumValue[7];
 // MSGEQ7 OUT pin produces values around 50-80
 // when there is no input, so use this value to
 // filter out a lot of the chaff.
-int filterValue = 80;
+
+// Try 100, mine's still noisy
+int filterValue = 100;
  
 // LED pins connected to the PWM pins on the Arduino
  
 int ledPinR = 10;
+int lastRPeak = 0;
 int ledPinG = 9;
+int lastGPeak = 0;
 int ledPinB = 11;
+int lastBPeak = 0;
  
 void setup()
 {
-  //Serial.begin(9600);
   // Read from MSGEQ7 OUT
   pinMode(analogPin, INPUT);
   // Write to MSGEQ7 STROBE and RESET
@@ -63,17 +67,30 @@ void loop()
     // Remap the value to a number between 0 and 255
     spectrumValue[i] = map(spectrumValue[i], filterValue, 1023, 0, 255);
  
-    // Remove serial stuff after debugging
-    //Serial.print(spectrumValue[i]);
-    //Serial.print(" ");
     digitalWrite(strobePin, HIGH);
   }
  
-  //Serial.println();
- 
   // Write the PWM values to the LEDs
   // I find that with three LEDs, these three spectrum values work the best
-  analogWrite(ledPinR, spectrumValue[1]);
-  analogWrite(ledPinG, spectrumValue[4]);
-  analogWrite(ledPinB, spectrumValue[6]);
+  //analogWrite(ledPinR, spectrumValue[1]);
+  //analogWrite(ledPinG, spectrumValue[4]);
+  //analogWrite(ledPinB, spectrumValue[6]);
+
+  // Try using peaks: 
+  
+  // decrement peaks;
+  lastRPeak--;
+  lastGPeak--;
+  lastBPeak--;
+
+  // Compare peaks vs values
+  lastRPeak = max(lastRPeak, spectrumValue[1]);
+  lastGPeak = max(lastGPeak, spectrumValue[4]);
+  lastBPeak = max(lastBPeak, spectrumValue[6]);
+
+  // write peaks
+  analogWrite(ledPinR, lastRPeak);
+  analogWrite(ledPinG, lastGPeak);
+  analogWrite(ledPinB, lastBPeak);
+
 }
